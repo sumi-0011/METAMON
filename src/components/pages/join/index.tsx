@@ -1,11 +1,17 @@
-import Input from '@/components/common/input';
 import EmailForm from '@/components/pages/join/email-form';
+import {
+  ErrorText,
+  Button,
+  Input,
+  FullButton,
+} from '@/components/pages/join/styled';
 import useInput from '@/hooks/useInput';
 import { useState } from 'react';
 import styled from 'styled-components';
 
 const VALID_PASSWORD_MESSAGE = '비밀번호 규칙 위반!! ';
-
+const PASSWORD_MESSAGE =
+  '특수문자 / 문자 / 숫자 포함 형태의 8~15자리 이내의 암호 정규식 ( 3 가지 조합)';
 function Join() {
   const [name, handleNameChange] = useInput();
   const [birth, handleBirthChange] = useInput();
@@ -28,21 +34,21 @@ function Join() {
 
   return (
     <Wrapper>
-      <h1>회원가입</h1>
-
-      <label htmlFor="join-name">이름</label>
+      {/* <label htmlFor="join-name">이름</label> */}
       <Input
         type="text"
         id="join-name"
         value={name}
         onChange={handleNameChange}
+        placeholder="이름"
       />
-      <label htmlFor="join-birth">생년월일</label>
+      {/* <label htmlFor="join-birth">생년월일</label> */}
       <Input
         type="text"
         value={birth}
         onChange={handleBirthChange}
         id="join-birth"
+        placeholder="생년월일"
       />
 
       <EmailForm
@@ -52,17 +58,24 @@ function Join() {
         handleEmailAuth={handleEmailAuth}
       />
 
-      <label htmlFor="join-password">비밀번호</label>
+      {/* <label htmlFor="join-password">비밀번호</label> */}
+
       <Input
         type="password"
         value={password}
         onChange={handlePasswordChange}
         id="join-password"
-        placeholder="특수문자 / 문자 / 숫자 포함 형태의 8~15자리 이내의 암호 정규식 ( 3 가지 조합)"
+        placeholder="비밀번호"
       />
-      <ErrorText>{!validPassword && VALID_PASSWORD_MESSAGE}</ErrorText>
 
-      <Button disabled={isSubmitDisable}>회원가입</Button>
+      {!validPassword && (
+        <div>
+          <ErrorText>{VALID_PASSWORD_MESSAGE}</ErrorText>
+          <ErrorText>{PASSWORD_MESSAGE}</ErrorText>
+        </div>
+      )}
+
+      <FullButton disabled={isSubmitDisable}>회원가입</FullButton>
     </Wrapper>
   );
 }
@@ -70,26 +83,13 @@ function Join() {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+  gap: 15px;
+  padding: 80px 20px;
 
-  max-width: 1000px;
+  max-width: 400px;
+  text-align: center;
+  margin: auto;
+  align-items: center;
 `;
 
-const ErrorText = styled.p`
-  color: red;
-  font-size: 0.7rem;
-`;
-
-const Button = styled.button`
-  height: 40px;
-  line-height: 40px;
-  width: 100px;
-  border-radius: 15px;
-  border: none;
-  cursor: pointer;
-
-  color: ${(props) => (props.disabled ? '#a9a9a9' : '#454545')};
-  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
-`;
 export default Join;

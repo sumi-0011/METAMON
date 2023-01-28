@@ -1,4 +1,4 @@
-import Input from '@/components/common/input';
+import { Button, ErrorText, Input } from '@/components/pages/join/styled';
 import useInput from '@/hooks/useInput';
 import { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
@@ -29,63 +29,45 @@ function EmailForm({
   };
 
   return (
-    <Wrapper>
-      <label htmlFor="join-email">이메일 </label>
+    <>
+      {/* <label htmlFor="join-email">이메일 </label> */}
       <InputWrapper>
         <Input
           type="email"
           id="join-email"
           value={email}
           onChange={handleEmailChange}
+          placeholder="이메일"
         />
-        <Button onClick={handleEmailAuthRequest} disabled={!validEmail}>
-          이메일 인증
-        </Button>
+        {validEmail && (
+          <Button onClick={handleEmailAuthRequest} disabled={!validEmail}>
+            이메일 인증
+          </Button>
+        )}
       </InputWrapper>
-      <ErrorText>{isEmailError && VALID_EMAIL_MESSAGE}</ErrorText>
+      {isEmailError && <ErrorText> {VALID_EMAIL_MESSAGE} </ErrorText>}
 
-      {requestAuth && (
-        <div>
+      {requestAuth ? (
+        <InputWrapper>
           <Input
             type="tex"
             value={authentication}
             onChange={handleAuthChange}
+            placeholder="인증번호"
           />
           <Button onClick={handleEmailAuth}>인증하기</Button>
-        </div>
-      )}
-    </Wrapper>
+        </InputWrapper>
+      ) : null}
+    </>
   );
 }
 
 const InputWrapper = styled.div`
   display: flex;
-  input {
-    flex: 1;
-  }
-`;
-
-const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-const ErrorText = styled.p`
-  color: red;
-  font-size: 0.7rem;
-`;
-
-const Button = styled.button`
-  height: 40px;
-  line-height: 40px;
-  width: 100px;
-  border-radius: 15px;
-  border: none;
-
-  color: ${(props) => (props.disabled ? '#a9a9a9' : '#454545')};
-  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  gap: 5px;
+  width: 217px;
+  overflow: visible;
+  flex-wrap: nowrap;
 `;
 
 export default EmailForm;
