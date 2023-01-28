@@ -5,35 +5,42 @@ import {
   LeftBox,
   WrapperStyle,
 } from '@/components/pages/onboarding/style';
+import useScrollFadeIn from '@/hooks/useScrollFadeIn';
 
 function Section1() {
+  const left1 = useScrollFadeIn('left', 1, 0);
+  const left2 = useScrollFadeIn('left', 1, 0);
+  const right1 = useScrollFadeIn('right', 1, 0);
+
   return (
     <Wrapper>
-      <TextWrapper>
-        <BigTitleWrapper>
-          <BigTitle>이것도 나고 </BigTitle>
-          <BigTitle>이것도 나야.</BigTitle>
-        </BigTitleWrapper>
+      <div>
+        <TextWrapper>
+          <BigTitleWrapper {...left1}>
+            <BigTitle>이것도 나고 </BigTitle>
+            <BigTitle>이것도 나야.</BigTitle>
+          </BigTitleWrapper>
 
-        <DescWrapper>
-          <Desc>메타버스 속 내 정체성 지킴이,</Desc>
-          <Desc>메타몽과 함께</Desc>
-          <br />
-          <Desc> </Desc>
-          <Desc>다양한 세상 속 내 모습을 한번에 </Desc>
-          <Desc>관리하세요.</Desc>
-        </DescWrapper>
-      </TextWrapper>
-      <Emoji>
-        <Image
-          src={'/static/emoji1.png'}
-          alt="emoji1"
-          width={268}
-          height={268}
-        />
-      </Emoji>
+          <DescWrapper {...left2}>
+            <Desc>메타버스 속 내 정체성 지킴이,</Desc>
+            <Desc>메타몽과 함께</Desc>
+            <br />
+            <Desc> </Desc>
+            <Desc>다양한 세상 속 내 모습을 한번에 </Desc>
+            <Desc>관리하세요.</Desc>
+          </DescWrapper>
+        </TextWrapper>
+        <Emoji>
+          <Image
+            src={'/static/emoji1.png'}
+            alt="emoji1"
+            width={268}
+            height={268}
+          />
+        </Emoji>
+      </div>
 
-      <MockImageWrapper>
+      <MockImageWrapper {...right1}>
         <Image src="/static/Mockup.png" alt="mockup1" fill />
       </MockImageWrapper>
     </Wrapper>

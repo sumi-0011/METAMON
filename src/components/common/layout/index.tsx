@@ -39,6 +39,7 @@ const MainContainer = styled.main`
 
   @media (max-width: 768px) {
     /* padding: 30px 20px; */
+    overflow-x: hidden;
   }
 
   padding-top: 95px;

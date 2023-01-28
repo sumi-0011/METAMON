@@ -1,13 +1,16 @@
 import Slider from '@/components/pages/intro/slider';
+import useScrollFadeIn from '@/hooks/useScrollFadeIn';
 import styled from 'styled-components';
 
 const images = ['/static/intro/2.png', '/static/intro/3.png'];
 
 function IntroPage() {
+  const animatedItem1 = useScrollFadeIn('up', 1, 0);
+  const animatedItem2 = useScrollFadeIn('up', 1, 1);
   return (
     <Wrapper>
-      <Title>안녕하세요.</Title>
-      <Title>METAMON을 소개합니다.</Title>
+      <Title {...animatedItem1}>안녕하세요.</Title>
+      <Title {...animatedItem2}>METAMON을 소개합니다.</Title>
       <Slider images={images} />
     </Wrapper>
   );

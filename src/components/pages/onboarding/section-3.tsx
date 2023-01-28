@@ -6,15 +6,21 @@ import {
 } from '@/components/pages/onboarding/style';
 import styled from 'styled-components';
 import Image from 'next/image';
+import useScrollFadeIn from '@/hooks/useScrollFadeIn';
 
 function Section3() {
+  const up = useScrollFadeIn('up', 1, 0);
+  const up2 = useScrollFadeIn('up', 1, 0);
+  const up3 = useScrollFadeIn('up', 1, 0);
+
   return (
     <Wrapper>
       <BigTitleWrapper>
-        <BigTitle>메타버스 신분증</BigTitle>
-        <BigTitle>메타몽.</BigTitle>
-
-        <DescWrapper>
+        <div {...up}>
+          <BigTitle>메타버스 신분증</BigTitle>
+          <BigTitle>메타몽.</BigTitle>
+        </div>
+        <DescWrapper {...up2}>
           <Desc>간단한 계정 인증을 통해</Desc>
           <br />
           <Desc>메타버스 속 나의 신분증을</Desc>
@@ -24,7 +30,7 @@ function Section3() {
           <button>신분증 만들러가기</button>
         </MakeButton>
       </BigTitleWrapper>
-      <EmojiWrapper>
+      <EmojiWrapper {...up3}>
         <Image
           src={'/static/emoji3.png'}
           alt="emoji2"
@@ -32,7 +38,6 @@ function Section3() {
           height={210}
         />
       </EmojiWrapper>
-
       <MockImageWrapper>
         <Image src="/static/Mockup3.png" alt="mockup1" fill />
       </MockImageWrapper>

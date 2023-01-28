@@ -104,6 +104,9 @@ const FullButton = styled(Button)`
   height: 55px;
   border-radius: 44px;
   font-weight: bold;
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100%;
+  }
 `;
 
 const FormWrapper = styled.div`
@@ -130,6 +133,14 @@ const Wrapper = styled.div`
   margin-top: 47px;
   transition: height 1s;
   justify-content: space-between;
+
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 410px;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100%;
+    padding: 35px 36px;
+  }
 `;
 
 export default Join;

@@ -25,6 +25,9 @@ const Wrapper = styled.div`
   width: 100%;
   margin: auto;
   padding: 72px 10px;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 72px 20px;
+  }
 `;
 
 const Title = styled.h1`
@@ -48,6 +51,9 @@ const RightImage = styled.div`
       width: 600px;
       height: 400px;
     }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    display: none;
   }
 `;
 

@@ -24,7 +24,11 @@ const Title = styled.h1`
 `;
 
 const Divider = styled.hr`
-  margin-top: 150px;
+  /* margin-top: 150px; */
+  margin: 150px 100px 0 100px;
+  @media ${({ theme }) => theme.device.mobile} {
+    margin: 150px 20px 0 20px;
+  }
 `;
 const Wrapper = styled.div`
   width: 100%;

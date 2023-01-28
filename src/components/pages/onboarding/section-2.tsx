@@ -8,16 +8,24 @@ import {
 } from '@/components/pages/onboarding/style';
 import styled from 'styled-components';
 import Image from 'next/image';
+import useScrollFadeIn from '@/hooks/useScrollFadeIn';
 
 function Section2() {
+  const down1 = useScrollFadeIn('down', 1, 0);
+  const down2 = useScrollFadeIn('down', 1, 0);
+  const down3 = useScrollFadeIn('down', 1, 0);
+  const down4 = useScrollFadeIn('down', 1, 0);
+  const right1 = useScrollFadeIn('right', 1, 0);
+  const left = useScrollFadeIn('left', 1, 0);
+
   return (
     <Wrapper>
-      <BigTitleWrapper>
+      <BigTitleWrapper {...down1}>
         <BigTitle>세상이 바뀌어도</BigTitle>
         <BigTitle>내가 나임을</BigTitle>
         <BigTitle>알 수 있도록</BigTitle>
       </BigTitleWrapper>
-      <EmojiWrapper>
+      <EmojiWrapper {...down2}>
         <Image
           src={'/static/emoji2.png'}
           alt="emoji2"
@@ -25,7 +33,7 @@ function Section2() {
           height={268}
         />
       </EmojiWrapper>
-      <MockImageWrapper>
+      <MockImageWrapper {...left}>
         <Image
           src="/static/Mockup2.png"
           alt="mockup1"
@@ -33,7 +41,7 @@ function Section2() {
           height={800}
         />
       </MockImageWrapper>
-      <DescWrapper>
+      <DescWrapper {...right1}>
         <Desc>어디에 누구와 있든</Desc>
         <Desc>내가 나임을 알 수 있게,</Desc>
         <Desc>현실과 통합된</Desc>
