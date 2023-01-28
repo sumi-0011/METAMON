@@ -107,17 +107,16 @@ const MockImageWrapper = styled.div`
 
 const TextWrapper = styled(LeftBox)`
   position: absolute;
-  top: 285px;
-  /* left: 254px; */
+  top: 160px;
   z-index: 1;
 `;
 
 const Emoji = styled(EmojiWrapperStyle)`
-  top: 400px;
-  left: 897px;
+  top: 220px;
+  left: 827px;
 
   @media ${({ theme }) => theme.device.desktop} {
-    left: 747px;
+    left: 680px;
   }
 
   @media ${({ theme }) => theme.device.laptop} {
@@ -126,12 +125,12 @@ const Emoji = styled(EmojiWrapperStyle)`
 
   @media ${({ theme }) => theme.device.tablet} {
     left: 320px;
-    top: 350px;
+    top: 200px;
   }
 
   @media ${({ theme }) => theme.device.mobile} {
     left: 230px;
-    top: 350px;
+    top: 170px;
   }
 `;
 

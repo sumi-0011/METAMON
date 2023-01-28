@@ -47,20 +47,9 @@ const LeftBox = styled(Flex)`
   height: 95px;
 
   padding: 15px 30px;
-`;
 
-const SearchWrapper = styled.div`
-  input {
-    box-sizing: border-box;
-    width: 250px;
-    height: 39px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: 1px solid #707070;
-  }
-
-  @media ${({ theme }) => theme.device.tablet} {
-    display: none;
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 10px;
   }
 `;
 
@@ -70,6 +59,19 @@ const Logo = styled.div`
   font-weight: bold;
   line-height: 40px;
   cursor: pointer;
+  @media ${({ theme }) => theme.device.tablet} {
+    img {
+      width: 150px;
+      height: 38px;
+    }
+  }
+
+  @media ${({ theme }) => theme.device.mobile} {
+    img {
+      width: 108px;
+      height: 26px;
+    }
+  }
 `;
 
 export default Header;

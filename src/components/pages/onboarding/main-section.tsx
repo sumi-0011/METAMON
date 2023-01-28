@@ -65,17 +65,21 @@ const LeftBox = styled.div`
     top: -155px;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    left: 80px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+  }
+
+  @media ${({ theme }) => theme.device.mobile} {
     img {
-      width: 370px;
-      height: 60px;
+      width: 250px;
+      height: 40px;
     }
     h2 {
-      font-size: 20px;
+      display: none;
     }
-  }
-  @media ${({ theme }) => theme.device.mobile} {
-    /* TODO */
   }
 `;
 
@@ -94,6 +98,27 @@ const RightImage = styled.div`
       width: 600px;
       height: 400px;
     }
+  }
+
+  @media ${({ theme }) => theme.device.tablet} {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: fit-content;
+    margin: auto;
+    height: fit-content;
+    img {
+      width: 600px;
+      position: relative;
+    }
+  }
+  @media (max-width: 545px) {
+    img {
+      right: 100px;
+    }
+  }
+  @media ${({ theme }) => theme.device.mobile} {
   }
 `;
 export default MainSection;

@@ -7,11 +7,18 @@ import {
 import styled from 'styled-components';
 import Image from 'next/image';
 import useScrollFadeIn from '@/hooks/useScrollFadeIn';
+import { useRouter } from 'next/router';
 
 function Section3() {
+  const router = useRouter();
+
   const up = useScrollFadeIn('up', 1, 0);
   const up2 = useScrollFadeIn('up', 1, 0);
   const up3 = useScrollFadeIn('up', 1, 0);
+
+  const handleMoveSignUp = () => {
+    router.push('/signin');
+  };
 
   return (
     <Wrapper>
@@ -27,7 +34,7 @@ function Section3() {
           <Desc>발급받아보세요.</Desc>
         </DescWrapper>
         <MakeButton>
-          <button>신분증 만들러가기</button>
+          <button onClick={handleMoveSignUp}>신분증 만들러가기</button>
         </MakeButton>
       </BigTitleWrapper>
       <EmojiWrapper {...up3}>

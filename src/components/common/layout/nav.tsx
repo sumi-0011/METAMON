@@ -11,26 +11,13 @@ function Nav({}: NavProps) {
   const router = useRouter();
   const selectedPage = router.pathname;
 
-  // const [isNavOpen, setIsNavOpen] = useState(false);
-
   const handleChangePath = (path: SelectedPageType) => {
     router.push(path);
   };
 
-  // const handleSubNavOpen = () => {
-  //   setIsNavOpen(true);
-  // };
-
-  // const handleSubNavClose = () => {
-  //   setIsNavOpen(false);
-  // };
-
   return (
     <Wrapper>
-      <InnerWrapper
-      // onMouseOver={handleSubNavOpen}
-      // onMouseLeave={handleSubNavClose}
-      >
+      <InnerWrapper>
         <Item
           className={selectedPage === '/intro' ? 'selected' : ''}
           onClick={() => handleChangePath('/intro')}
@@ -43,17 +30,6 @@ function Nav({}: NavProps) {
         >
           사용 방법
         </Item>
-        {/* <SubNav className={isNavOpen ? 'open' : ''}>
-          <SubNavInner>
-            <SubItemWrapper>
-              <SubItem>METAMON 소개</SubItem>
-              <SubItem>서비스 취지</SubItem>
-            </SubItemWrapper>
-            <SubItemWrapper>
-              <SubItem>사용 방법</SubItem>
-            </SubItemWrapper>
-          </SubNavInner>
-        </SubNav> */}
       </InnerWrapper>
 
       <SignInWrapper onClick={() => handleChangePath('/signin')}>
@@ -62,14 +38,6 @@ function Nav({}: NavProps) {
     </Wrapper>
   );
 }
-
-const SubNavInner = styled.div`
-  float: right;
-  width: 363px;
-  margin: 20px 30px;
-  display: flex;
-  gap: 60px;
-`;
 
 const Wrapper = styled.nav`
   display: flex;
@@ -80,7 +48,13 @@ const Wrapper = styled.nav`
   padding: 0 30px;
   font-size: 15px;
   @media ${({ theme }) => theme.device.tablet} {
-    display: none;
+    /* display: none; */
+    gap: 5px;
+    font-size: 13px;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    font-size: 10px;
+    padding: 0 10px;
   }
 `;
 
@@ -90,38 +64,8 @@ const InnerWrapper = styled.div`
   align-items: center;
   padding: 15px 0;
   gap: 20px;
-`;
-
-const SubItemWrapper = styled.div`
-  display: flex;
-  min-width: 72px;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-const SubItem = styled.div`
-  width: fit-content;
-
-  cursor: pointer;
-  position: relative;
-  &::after {
-    transition: all 0.8s;
-    content: '';
-    height: 0px;
-    width: 0px;
-    position: absolute;
-    border: 1px solid #fff;
-
-    bottom: -5px;
-    right: 0;
-    left: 0;
-  }
-
-  &:hover {
-    &::after {
-      width: 100%;
-      border: 1px solid var(--basic-color);
-    }
+  @media ${({ theme }) => theme.device.tablet} {
+    gap: 5px;
   }
 `;
 
@@ -165,6 +109,19 @@ const Item = styled.div`
       animation-duration: 0.5s;
     }
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    min-width: fit-content;
+    width: fit-content;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: fit-content;
+    min-width: fit-content;
+
+    &.selected::before {
+      width: 50px;
+      top: -36px;
+    }
+  }
 `;
 
 const SignInWrapper = styled.button`
@@ -180,21 +137,16 @@ const SignInWrapper = styled.button`
 
   background-color: var(--basic-color);
   border: 1px solid var(--basic-color);
-`;
-
-const SubNav = styled.div`
-  position: absolute;
-  transition: all 1s;
-  background-color: #fff;
-  top: 95px;
-  width: 100%;
-  right: 0;
-  left: 0;
-  height: 0;
-  overflow: hidden;
-
-  &.open {
-    height: 150px;
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 120px;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    font-size: 10px;
+    width: 108px;
+  }
+  @media (max-width: 375px) {
+    display: none;
   }
 `;
+
 export default Nav;

@@ -1,7 +1,11 @@
 import { useRef, useEffect, useCallback, MutableRefObject } from 'react';
 type DirectionType = 'up' | 'down' | 'left' | 'right';
 
-const useScrollFadeIn = (direction = 'up', duration = 1, delay = 0) => {
+const useScrollFadeIn = (
+  direction: DirectionType = 'up',
+  duration = 1,
+  delay = 0,
+) => {
   const element = useRef<any>();
 
   const handleDirection = (name: DirectionType) => {

@@ -29,7 +29,7 @@ const Wrapper = styled.footer`
 
 const Copyright = styled.div`
   color: #c2c2c2;
-  font-weight: 12px;
+  font-size: 12px;
   line-height: 18px;
 `;
 export default Footer;
