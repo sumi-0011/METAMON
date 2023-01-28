@@ -2,10 +2,10 @@
   "name": "next-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://meta-sumi.s3-ap-northeast-2.amazonaws.com/",
+  "proxy": "http://ec2-15-164-169-134.ap-northeast-2.compute.amazonaws.com:8080",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -20,6 +20,7 @@
     "eslint-config-next": "13.1.2",
     "framer-motion": "^8.5.4",
     "next": "13.1.2",
+    "next-optimized-images": "^2.6.2",
     "next-seo": "^5.15.0",
     "popmotion": "^11.0.5",
     "react": "18.2.0",

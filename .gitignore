@@ -28,3 +28,4 @@ chrome-user-data
 next-env.d.ts
 
 next.config.js
+out/*
