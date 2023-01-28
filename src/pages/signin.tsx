@@ -4,7 +4,8 @@ import styled from 'styled-components';
 function JoinPage() {
   return (
     <Wrapper>
-      <Title>정보를 입력하세요.</Title>
+      <Title>안녕하세요.</Title>
+      <Title>METAMON에 로그인 해보세요</Title>
       <Join />
     </Wrapper>
   );

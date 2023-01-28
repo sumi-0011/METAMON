@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import debounceFunction from '@/util/debounce';
 import { validEmail, validPassword } from '@/util/auth';
 
@@ -18,13 +18,14 @@ function useInput(type?: InputType): UseInputReturns {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
+    setIsValid(false);
+
     printValue(e.target.value);
   };
 
   const printValue = useCallback(
     debounceFunction((value: string) => {
       const valid = validInput(type, value);
-      console.log('valid: ', valid);
       if (!valid?.isValid && valid?.message) {
         setIsValid(false);
       } else {

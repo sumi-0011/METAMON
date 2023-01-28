@@ -1,95 +1,133 @@
+import { sign_up } from '@/api/auth';
 import EmailForm from '@/components/pages/join/email-form';
-import {
-  ErrorText,
-  Button,
-  Input,
-  FullButton,
-} from '@/components/pages/join/styled';
+import { ErrorText, Button, Input } from '@/components/pages/join/styled';
 import useInput from '@/hooks/useInput';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const VALID_PASSWORD_MESSAGE = '비밀번호 규칙 위반!! ';
-const PASSWORD_MESSAGE =
-  '특수문자 / 문자 / 숫자 포함 형태의 8~15자리 이내의 암호 정규식 ( 3 가지 조합)';
+// const VALID_PASSWORD_MESSAGE = '비밀번호 규칙 위반!! ';
+const PASSWORD_MESSAGE = '특수문자/문자/숫자 형태의 8~15자리 이내';
+
 function Join() {
   const [name, handleNameChange] = useInput();
   const [birth, handleBirthChange] = useInput();
   const [password, handlePasswordChange, validPassword] = useInput('password');
   const [email, handleEmailChange, validEmail] = useInput('email');
-
-  const [isValidAuth, setIsValidAuth] = useState(false); // 인증 성공
-
+  const [isValidAuth, setIsValidAuth] = useState(false);
   const isSubmitDisable = !(
     isValidAuth &&
-    validEmail &&
     validPassword &&
     name !== '' &&
     birth !== ''
   );
 
-  const handleEmailAuth = () => {
-    setIsValidAuth(true);
+  const handleEmailAuth = (flag: boolean) => {
+    setIsValidAuth(flag);
   };
+
+  const handleSignIn = async () => {
+    if (isValidAuth) {
+      console.log(name, birth, password, email);
+
+      const data = await sign_up({
+        name,
+        email,
+        password,
+        birth,
+      });
+
+      if (data?.status === 200) {
+        // TODO : 회원가입 완료, 페이지ㅣ 이동
+        const { name } = data.data;
+        console.log('data: ', data.data);
+      }
+    }
+  };
+
+  useEffect(() => {
+    setIsValidAuth(false);
+  }, [email]);
 
   return (
     <Wrapper>
-      {/* <label htmlFor="join-name">이름</label> */}
-      <Input
-        type="text"
-        id="join-name"
-        value={name}
-        onChange={handleNameChange}
-        placeholder="이름"
-      />
-      {/* <label htmlFor="join-birth">생년월일</label> */}
-      <Input
-        type="text"
-        value={birth}
-        onChange={handleBirthChange}
-        id="join-birth"
-        placeholder="생년월일"
-      />
+      <Title>회원가입</Title>
+      <FormWrapper>
+        <Input
+          type="text"
+          id="join-name"
+          value={name}
+          onChange={handleNameChange}
+          placeholder="이름"
+        />
+        <Input
+          type="date"
+          value={birth}
+          onChange={handleBirthChange}
+          id="join-birth"
+          placeholder="생년월일"
+        />
 
-      <EmailForm
-        email={email}
-        handleEmailChange={handleEmailChange}
-        validEmail={validEmail}
-        handleEmailAuth={handleEmailAuth}
-      />
-
-      {/* <label htmlFor="join-password">비밀번호</label> */}
-
-      <Input
-        type="password"
-        value={password}
-        onChange={handlePasswordChange}
-        id="join-password"
-        placeholder="비밀번호"
-      />
-
-      {!validPassword && (
         <div>
-          <ErrorText>{VALID_PASSWORD_MESSAGE}</ErrorText>
-          <ErrorText>{PASSWORD_MESSAGE}</ErrorText>
-        </div>
-      )}
+          <Input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            id="join-password"
+            placeholder="비밀번호"
+          />
 
-      <FullButton disabled={isSubmitDisable}>회원가입</FullButton>
+          {!validPassword && password !== '' ? (
+            <ErrorText>{PASSWORD_MESSAGE}</ErrorText>
+          ) : null}
+        </div>
+        <EmailForm
+          email={email}
+          handleEmailChange={handleEmailChange}
+          validEmail={validEmail}
+          handleEmailAuth={handleEmailAuth}
+          isValidAuth={isValidAuth}
+        />
+      </FormWrapper>
+
+      <FullButton disabled={isSubmitDisable} onClick={handleSignIn}>
+        회원가입
+      </FullButton>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.div`
+const FullButton = styled(Button)`
+  margin-top: 24px;
+  width: 325px;
+  height: 55px;
+  border-radius: 44px;
+  font-weight: bold;
+`;
+
+const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 80px 20px;
-
-  max-width: 400px;
+`;
+const Title = styled.h2`
+  color: #464646;
+  font-size: 20px;
+`;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background-color: #fff;
+  border-radius: 28px;
+  padding: 35px 76px;
+  width: 478px;
+  min-height: 469px;
   text-align: center;
-  margin: auto;
   align-items: center;
+  margin: auto;
+  margin-top: 47px;
+  transition: height 1s;
+  justify-content: space-between;
 `;
 
 export default Join;

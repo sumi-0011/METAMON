@@ -11,25 +11,25 @@ function Nav({}: NavProps) {
   const router = useRouter();
   const selectedPage = router.pathname;
 
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  // const [isNavOpen, setIsNavOpen] = useState(false);
 
   const handleChangePath = (path: SelectedPageType) => {
     router.push(path);
   };
 
-  const handleSubNavOpen = () => {
-    setIsNavOpen(true);
-  };
+  // const handleSubNavOpen = () => {
+  //   setIsNavOpen(true);
+  // };
 
-  const handleSubNavClose = () => {
-    setIsNavOpen(false);
-  };
+  // const handleSubNavClose = () => {
+  //   setIsNavOpen(false);
+  // };
 
   return (
     <Wrapper>
       <InnerWrapper
-        onMouseOver={handleSubNavOpen}
-        onMouseLeave={handleSubNavClose}
+      // onMouseOver={handleSubNavOpen}
+      // onMouseLeave={handleSubNavClose}
       >
         <Item
           className={selectedPage === '/intro' ? 'selected' : ''}
@@ -171,12 +171,14 @@ const SignInWrapper = styled.button`
   color: #4d4f5c;
   padding-left: 20px;
   cursor: pointer;
-  background-color: var(--basic-color);
-  width: 180px;
   color: #fff;
   padding: 5px 20px;
   border-radius: 20px;
-  line-height: 40px;
+
+  width: 180px;
+  height: 39px;
+
+  background-color: var(--basic-color);
   border: 1px solid var(--basic-color);
 `;
 

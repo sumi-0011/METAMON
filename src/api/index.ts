@@ -1,4 +1,5 @@
 import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 const requestGET = async (url: string, param: any) => {
   try {

@@ -29,7 +29,6 @@ const DEFAULT_SEO = {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log('theme: ', theme);
   return (
     <ThemeProvider theme={theme}>
       <DefaultSeo {...DEFAULT_SEO} />

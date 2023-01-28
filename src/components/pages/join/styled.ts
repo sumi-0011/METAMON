@@ -1,39 +1,37 @@
 import styled from 'styled-components';
 
 export const ErrorText = styled.p`
-  color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   text-align: start;
+  width: 217px;
+  color: #353535;
+  padding-left: 5px;
 `;
 
 export const Button = styled.button`
-  height: 40px;
-  line-height: 40px;
-  width: 100px;
-  min-width: 100px;
-  border-radius: 20px;
   border: none;
   cursor: pointer;
   background-color: #fff;
-  color: ${(props) => (props.disabled ? '#a9a9a9' : '#454545')};
+  /* color: ${(props) => (props.disabled ? '#a9a9a9' : '#0066ff')}; */
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
-`;
 
-export const FullButton = styled(Button)`
-  width: 325px;
+  color: #0066ff;
+  border: 1px solid #0066ff;
+  border-radius: 13px;
 `;
 
 export const Input = styled.input`
-  width: 217px;
   min-width: 217px;
-  height: 40px;
   font-size: 15px;
-  border: 0;
-  border-radius: 20px;
-  outline: none;
-  padding-left: 10px;
-  background-color: #fff;
   padding: 10px 15px;
+
+  width: 217px;
+  height: 40px;
+  /* UI Properties */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 44px;
+  opacity: 1;
 
   &::placeholder {
     color: #d5d5d5;
