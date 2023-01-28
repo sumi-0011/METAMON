@@ -2,6 +2,7 @@ import { sign_up } from '@/api/auth';
 import EmailForm from '@/components/pages/join/email-form';
 import { ErrorText, Button, Input } from '@/components/pages/join/styled';
 import useInput from '@/hooks/useInput';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
@@ -9,6 +10,8 @@ import styled from 'styled-components';
 const PASSWORD_MESSAGE = '특수문자/문자/숫자 형태의 8~15자리 이내';
 
 function Join() {
+  const router = useRouter();
+
   const [name, handleNameChange] = useInput();
   const [birth, handleBirthChange] = useInput();
   const [password, handlePasswordChange, validPassword] = useInput('password');
@@ -38,8 +41,7 @@ function Join() {
 
       if (data?.status === 200) {
         // TODO : 회원가입 완료, 페이지ㅣ 이동
-        const { name } = data.data;
-        console.log('data: ', data.data);
+        router.push('/signin/complete');
       }
     }
   };

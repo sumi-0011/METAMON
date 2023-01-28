@@ -71,9 +71,6 @@ function EmailForm({
             placeholder="인증번호"
           />
           <NonValid className={isValidAuth ? 'ok' : ''} />
-          {/* <AuthNumberRequestBtn onClick={handleEmailAuth}>
-            인증하기
-          </AuthNumberRequestBtn> */}
         </InputWrapper>
       ) : null}
 

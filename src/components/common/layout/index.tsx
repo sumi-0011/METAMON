@@ -32,6 +32,8 @@ const HeaderContainer = styled.header`
 const MainContainer = styled.main`
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 768px) {
     padding: 30px 20px;
