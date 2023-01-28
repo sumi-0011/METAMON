@@ -1,4 +1,5 @@
 import { Flex } from '@/components/common/flex';
+import Nav from '@/components/common/layout/nav';
 import styled from 'styled-components';
 
 function Header() {
@@ -10,11 +11,7 @@ function Header() {
           <input type="text" />
         </SearchWrapper>
       </LeftBox>
-      <RightBox>
-        <div>METAMON 소개</div>
-        <div>사용 방법</div>
-        <SignInWrapper>Sign in</SignInWrapper>
-      </RightBox>
+      <Nav />
     </Wrapper>
   );
 }
@@ -34,32 +31,6 @@ const LeftBox = styled(Flex)`
   height: 40px;
 `;
 
-const RightBox = styled(Flex)`
-  gap: 50px;
-  color: #a1a1a1;
-`;
-
-const SignInWrapper = styled(Flex)`
-  color: #4d4f5c;
-  padding-left: 20px;
-  &::before {
-    content: '';
-    height: 17px;
-    width: 0px;
-    border: 0.1px solid #a1a1a1;
-    background-color: #a1a1a1;
-    position: relative;
-    left: -30px;
-  }
-`;
-
-const Logo = styled.div`
-  color: var(--basic-color);
-  font-size: 1.875rem;
-  font-weight: bold;
-  line-height: 40px;
-`;
-
 const SearchWrapper = styled.div`
   input {
     box-sizing: border-box;
@@ -70,4 +41,12 @@ const SearchWrapper = styled.div`
     border: 1px solid #707070;
   }
 `;
+
+const Logo = styled.div`
+  color: var(--basic-color);
+  font-size: 1.875rem;
+  font-weight: bold;
+  line-height: 40px;
+`;
+
 export default Header;
