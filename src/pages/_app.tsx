@@ -24,11 +24,12 @@ const DEFAULT_SEO = {
     ],
   },
 };
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo {...DEFAULT_SEO} />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }

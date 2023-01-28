@@ -1,5 +1,7 @@
 :root {
   --max-width: 1100px;
+
+  --basic-color: #0066ff;
 }
 * {
   box-sizing: border-box;
