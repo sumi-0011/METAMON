@@ -1,4 +1,4 @@
-import Slider from '@/components/pages/onboarding/slider';
+import Slider from '@/components/pages/intro/slider';
 import styled from 'styled-components';
 
 function IntroPage() {
