@@ -16,9 +16,9 @@ function Header() {
       <Wrapper>
         <LeftBox>
           <Logo onClick={() => handleChangePath('/')}>MEMAMON</Logo>
-          <SearchWrapper>
+          {/* <SearchWrapper>
             <input type="text" />
-          </SearchWrapper>
+          </SearchWrapper> */}
         </LeftBox>
         <Nav />
       </Wrapper>
@@ -29,7 +29,7 @@ function Header() {
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 70px;
+  height: 95px;
   background-color: #fff;
 
   display: flex;
@@ -39,7 +39,7 @@ const Wrapper = styled.div`
 
 const LeftBox = styled(Flex)`
   gap: 50px;
-  height: 70px;
+  height: 95px;
 
   padding: 15px 30px;
 `;

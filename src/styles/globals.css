@@ -22,7 +22,7 @@ body {
 }
 
 main {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 95px);
 }
 a {
   color: inherit;

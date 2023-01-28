@@ -38,7 +38,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
-          <link rel="icon" href="/metamon.png" />
+          <link rel="icon" href="/metamon-logo.svg" />
           {/* <title>metamon</title> */}
         </Head>
         <body>

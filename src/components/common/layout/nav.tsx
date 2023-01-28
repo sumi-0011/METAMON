@@ -43,7 +43,7 @@ function Nav({}: NavProps) {
         >
           사용 방법
         </Item>
-        <SubNav className={isNavOpen ? 'open' : ''}>
+        {/* <SubNav className={isNavOpen ? 'open' : ''}>
           <SubNavInner>
             <SubItemWrapper>
               <SubItem>METAMON 소개</SubItem>
@@ -53,11 +53,11 @@ function Nav({}: NavProps) {
               <SubItem>사용 방법</SubItem>
             </SubItemWrapper>
           </SubNavInner>
-        </SubNav>
+        </SubNav> */}
       </InnerWrapper>
 
       <SignInWrapper onClick={() => handleChangePath('/signin')}>
-        Sign in
+        회원가입하기
       </SignInWrapper>
     </Wrapper>
   );
@@ -76,9 +76,9 @@ const Wrapper = styled.nav`
   gap: 30px;
   color: #a1a1a1;
   align-items: center;
-  height: 70px;
+  height: 95px;
   padding: 0 30px;
-
+  font-size: 15px;
   @media ${({ theme }) => theme.device.tablet} {
     display: none;
   }
@@ -135,20 +135,10 @@ const Item = styled.div`
   padding: 5px;
 
   &:hover {
-    @keyframes example {
-      from {
-        font-weight: 500;
-      }
-      to {
-        font-weight: 600;
-      }
-    }
-
-    animation: example 0.5s;
+    color: var(--basic-color);
   }
   &.selected {
-    font-weight: 600;
-    /* text-shadow: 0 0 1px #adadad; */
+    color: var(--basic-color);
 
     &::before {
       @keyframes fadeIn {
@@ -162,7 +152,7 @@ const Item = styled.div`
 
       margin: auto;
       position: absolute;
-      top: -24px;
+      top: -32px;
       left: 0;
       right: 0;
       content: '';
@@ -177,27 +167,24 @@ const Item = styled.div`
   }
 `;
 
-const SignInWrapper = styled(Flex)`
+const SignInWrapper = styled.button`
   color: #4d4f5c;
   padding-left: 20px;
   cursor: pointer;
-
-  &::before {
-    content: '';
-    height: 17px;
-    width: 0px;
-    border: 0.1px solid #a1a1a1;
-    background-color: #a1a1a1;
-    position: relative;
-    left: -30px;
-  }
+  background-color: var(--basic-color);
+  width: 180px;
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  line-height: 40px;
+  border: 1px solid var(--basic-color);
 `;
 
 const SubNav = styled.div`
   position: absolute;
   transition: all 1s;
   background-color: #fff;
-  top: 70px;
+  top: 95px;
   width: 100%;
   right: 0;
   left: 0;

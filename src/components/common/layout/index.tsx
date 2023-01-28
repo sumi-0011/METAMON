@@ -31,8 +31,13 @@ const HeaderContainer = styled.header`
 
 const MainContainer = styled.main`
   width: 100%;
-  padding-top: 70px;
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
+
+  padding-top: 95px;
 `;
 
 export default Layout;

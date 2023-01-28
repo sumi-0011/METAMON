@@ -104,7 +104,7 @@ const Wrapper = styled.div`
 
 const ImgWrapper = styled.div`
   width: 100%;
-  height: 460px;
+  height: 478px;
   border-radius: 50px;
   overflow: hidden;
   img {
