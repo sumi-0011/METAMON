@@ -1,22 +1,25 @@
 import { Flex } from '@/components/common/flex';
 import Nav from '@/components/common/layout/nav';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 function Header() {
   return (
-    <Wrapper>
-      <LeftBox>
-        <Logo>MEMAMON</Logo>
-        <SearchWrapper>
-          <input type="text" />
-        </SearchWrapper>
-      </LeftBox>
-      <Nav />
-    </Wrapper>
+    <div>
+      <Wrapper>
+        <LeftBox>
+          <Logo>MEMAMON</Logo>
+          <SearchWrapper>
+            <input type="text" />
+          </SearchWrapper>
+        </LeftBox>
+        <Nav />
+      </Wrapper>
+    </div>
   );
 }
-
 const Wrapper = styled.div`
+  position: relative;
   width: 100%;
   height: 70px;
   background-color: #fff;
@@ -24,6 +27,7 @@ const Wrapper = styled.div`
 
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #eee;
 `;
 
 const LeftBox = styled(Flex)`

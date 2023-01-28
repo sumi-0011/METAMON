@@ -4,16 +4,29 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 type SelectedPageType = '/intro' | '/way' | '/signin';
-function Nav() {
+
+interface NavProps {}
+
+function Nav({}: NavProps) {
   const router = useRouter();
   const selectedPage = router.pathname;
+
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const handleNavItemClick = (path: SelectedPageType) => {
     router.push(path);
   };
 
+  const handleSubNavOpen = () => {
+    setIsNavOpen(true);
+  };
+
+  const handleSubNavClose = () => {
+    setIsNavOpen(false);
+  };
+
   return (
-    <Wrapper>
+    <Wrapper onMouseOver={handleSubNavOpen} onMouseLeave={handleSubNavClose}>
       <Item
         className={selectedPage === '/intro' ? 'selected' : ''}
         onClick={() => handleNavItemClick('/intro')}
@@ -29,15 +42,40 @@ function Nav() {
       <SignInWrapper onClick={() => handleNavItemClick('/signin')}>
         Sign in
       </SignInWrapper>
+
+      <SubNav className={isNavOpen ? 'open' : ''}>
+        <SubNavInner>
+          <SubItemWrapper>
+            <div>METAMON 소개</div>
+            <div>서비스 취지</div>
+          </SubItemWrapper>
+          <SubItemWrapper>사용 방법</SubItemWrapper>
+        </SubNavInner>
+      </SubNav>
     </Wrapper>
   );
 }
+
+const SubNavInner = styled.div`
+  float: right;
+  width: 352px;
+  margin: 20px 30px;
+  display: flex;
+  gap: 55px;
+`;
 
 const Wrapper = styled.nav`
   display: flex;
   gap: 50px;
   color: #a1a1a1;
   align-items: center;
+`;
+
+const SubItemWrapper = styled.div`
+  display: flex;
+  min-width: 72px;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 const Item = styled.div`
@@ -73,4 +111,18 @@ const SignInWrapper = styled(Flex)`
   }
 `;
 
+const SubNav = styled.div`
+  position: absolute;
+  transition: all 1s;
+  background-color: #fff;
+  top: 70px;
+  width: 100%;
+  right: 0;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+  &.open {
+    height: 150px;
+  }
+`;
 export default Nav;
