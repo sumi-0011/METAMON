@@ -38,6 +38,8 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
+          <link rel="icon" href="/metamon.png" />
+          {/* <title>metamon</title> */}
         </Head>
         <body>
           <Main />
