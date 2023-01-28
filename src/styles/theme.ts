@@ -1,5 +1,5 @@
 const deviceSizes = {
-  mobile: '375px',
+  mobile: '475px',
   tablet: '768px',
   laptop: '1024px',
   desktop: '1400px',

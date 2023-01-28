@@ -1,5 +1,6 @@
 import MainSection from '@/components/pages/onboarding/main-section';
 import Section1 from '@/components/pages/onboarding/section-1';
+import Section2 from '@/components/pages/onboarding/section-2';
 import styled from 'styled-components';
 
 function Onboarding() {
@@ -7,6 +8,8 @@ function Onboarding() {
     <Wrapper>
       <MainSection />
       <Section1 />
+      <hr />
+      <Section2 />
     </Wrapper>
   );
 }

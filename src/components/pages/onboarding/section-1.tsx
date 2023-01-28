@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import {
   EmojiWrapperStyle,
+  LeftBox,
   WrapperStyle,
 } from '@/components/pages/onboarding/style';
 
@@ -93,25 +94,15 @@ const MockImageWrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     width: 300px;
     height: 350px;
+    right: 10px;
   }
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled(LeftBox)`
   position: absolute;
   top: 285px;
-  left: 254px;
+  /* left: 254px; */
   z-index: 1;
-
-  @media ${({ theme }) => theme.device.desktop} {
-    left: 100px;
-  }
-
-  @media ${({ theme }) => theme.device.tablet} {
-    left: 50px;
-  }
-  @media ${({ theme }) => theme.device.mobile} {
-    left: 20px;
-  }
 `;
 
 const Emoji = styled(EmojiWrapperStyle)`
@@ -151,6 +142,7 @@ const BigTitle = styled.div`
 
 const DescWrapper = styled.div`
   margin-top: 120px;
+  text-align: left;
 
   @media ${({ theme }) => theme.device.laptop} {
     margin-top: 80px;
