@@ -31,7 +31,6 @@ const Wrapper = styled.div`
   background-color: var(--basic-color);
   height: calc(100vh - 95px);
   width: 100%;
-  max-height: 730px;
 `;
 
 const InnerWrapper = styled.div`

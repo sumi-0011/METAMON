@@ -5,12 +5,6 @@ import { wrap } from 'popmotion';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-const images = [
-  'https://contents.lotteon.com/itemimage/_v031902/LM/88/09/84/92/61/24/3_/00/1/LM8809849261243_001_1.jpg/dims/resizef/720X720',
-  'https://mblogthumb-phinf.pstatic.net/MjAxOTExMzBfMTE2/MDAxNTc1MDg5MDk0ODU3.1pokY3_09oFD9snX2vLZucB_ZnkqS_eZRELPIVbSCUYg.ll-GyAeG5dLfIwY2gnjNREhxpcQTtbfMjt3bP39rPOQg.JPEG.hanee218/1575089095312.jpeg?type=w800',
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_iqbo4mgOKmZTU_tZNcVGAkSz0P7zW3m2cQ&usqp=CAU',
-];
-
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
@@ -37,7 +31,11 @@ const variants = {
   },
 };
 
-function Slider() {
+interface SliderProps {
+  images: string[];
+}
+
+function Slider({ images }: SliderProps) {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const imageIndex = wrap(0, images.length, page);
@@ -50,6 +48,7 @@ function Slider() {
     <Wrapper>
       <AnimatePresence initial={false} custom={direction}>
         <ImgWrapper>
+          {/* <InnerWrapper> */}
           <motion.img
             key={page}
             src={images[imageIndex]}
@@ -75,6 +74,7 @@ function Slider() {
               }
             }}
           />
+          {/* </InnerWrapper> */}
         </ImgWrapper>
       </AnimatePresence>
       <NextArrow className="next" onClick={() => paginate(1)}>
@@ -103,14 +103,39 @@ const Wrapper = styled.div`
 `;
 
 const ImgWrapper = styled.div`
-  width: 100%;
+  width: 880px;
   height: 478px;
   border-radius: 50px;
   overflow: hidden;
+  padding: 10px;
+  margin: auto;
   img {
+    width: calc(100%);
+    height: calc(100%);
+    object-fit: contain;
+  }
+  @media ${({ theme }) => theme.device.laptop} {
+    height: 400px;
+    width: 85%;
+
+    img {
+      height: 380px;
+    }
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 85%;
+    max-height: 300px;
+
+    img {
+      height: 280px;
+    }
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    height: 200px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    img {
+      height: 180px;
+    }
   }
 `;
 
@@ -127,17 +152,29 @@ const Arrow = styled.div`
 `;
 
 const PrevArrow = styled(Arrow)`
-  left: -35px;
+  left: 0;
 
+  @media ${({ theme }) => theme.device.laptop} {
+    left: 35px;
+  }
   @media (max-width: 768px) {
-    left: 10px;
+    left: 20px;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    left: -20px;
   }
 `;
 
 const NextArrow = styled(Arrow)`
-  right: -35px;
+  right: 0;
+  @media ${({ theme }) => theme.device.laptop} {
+    right: 35px;
+  }
   @media (max-width: 768px) {
-    right: 10px;
+    right: 20px;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    right: -20px;
   }
 `;
 
