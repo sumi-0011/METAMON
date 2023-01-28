@@ -11,7 +11,7 @@ function Nav({}: NavProps) {
   const router = useRouter();
   const selectedPage = router.pathname;
 
-  const [isNavOpen, setIsNavOpen] = useState(true);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const handleChangePath = (path: SelectedPageType) => {
     router.push(path);
@@ -22,12 +22,15 @@ function Nav({}: NavProps) {
   };
 
   const handleSubNavClose = () => {
-    setIsNavOpen(true);
+    setIsNavOpen(false);
   };
 
   return (
     <Wrapper>
-      <Wrapper onMouseOver={handleSubNavOpen} onMouseLeave={handleSubNavClose}>
+      <InnerWrapper
+        onMouseOver={handleSubNavOpen}
+        onMouseLeave={handleSubNavClose}
+      >
         <Item
           className={selectedPage === '/intro' ? 'selected' : ''}
           onClick={() => handleChangePath('/intro')}
@@ -51,7 +54,7 @@ function Nav({}: NavProps) {
             </SubItemWrapper>
           </SubNavInner>
         </SubNav>
-      </Wrapper>
+      </InnerWrapper>
 
       <SignInWrapper onClick={() => handleChangePath('/signin')}>
         Sign in
@@ -62,17 +65,27 @@ function Nav({}: NavProps) {
 
 const SubNavInner = styled.div`
   float: right;
-  width: 352px;
+  width: 363px;
   margin: 20px 30px;
   display: flex;
-  gap: 55px;
+  gap: 60px;
 `;
 
 const Wrapper = styled.nav`
   display: flex;
-  gap: 50px;
+  gap: 30px;
   color: #a1a1a1;
   align-items: center;
+  height: 70px;
+  padding: 0 30px;
+`;
+
+const InnerWrapper = styled.div`
+  display: flex;
+  color: #a1a1a1;
+  align-items: center;
+  padding: 15px 0;
+  gap: 20px;
 `;
 
 const SubItemWrapper = styled.div`
@@ -88,7 +101,7 @@ const SubItem = styled.div`
   cursor: pointer;
   position: relative;
   &::after {
-    transition: all 1s;
+    transition: all 0.8s;
     content: '';
     height: 0px;
     width: 0px;
@@ -107,14 +120,31 @@ const SubItem = styled.div`
     }
   }
 `;
+
 const Item = styled.div`
+  --color: #a1a1a1;
   position: relative;
-  min-width: 72px;
+  min-width: 115px;
+  width: 125px;
   text-align: center;
   cursor: pointer;
+  padding: 5px;
 
+  &:hover {
+    @keyframes example {
+      from {
+        font-weight: 500;
+      }
+      to {
+        font-weight: 600;
+      }
+    }
+
+    animation: example 0.5s;
+  }
   &.selected {
-    font-weight: bold;
+    font-weight: 600;
+    /* text-shadow: 0 0 1px #adadad; */
 
     &::before {
       @keyframes fadeIn {

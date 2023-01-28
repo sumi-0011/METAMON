@@ -30,7 +30,6 @@ const Wrapper = styled.div`
   width: 100%;
   height: 70px;
   background-color: #fff;
-  padding: 15px 30px;
 
   display: flex;
   justify-content: space-between;
@@ -39,7 +38,9 @@ const Wrapper = styled.div`
 
 const LeftBox = styled(Flex)`
   gap: 50px;
-  height: 40px;
+  height: 70px;
+
+  padding: 15px 30px;
 `;
 
 const SearchWrapper = styled.div`
