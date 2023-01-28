@@ -78,6 +78,10 @@ const Wrapper = styled.nav`
   align-items: center;
   height: 70px;
   padding: 0 30px;
+
+  @media ${({ theme }) => theme.device.tablet} {
+    display: none;
+  }
 `;
 
 const InnerWrapper = styled.div`
@@ -163,7 +167,7 @@ const Item = styled.div`
       right: 0;
       content: '';
       width: 72px;
-      height: 9px;
+      height: 12px;
       display: block;
       background-color: var(--basic-color);
       border-radius: 0 0 9px 9px;

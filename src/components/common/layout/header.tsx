@@ -25,6 +25,7 @@ function Header() {
     </div>
   );
 }
+
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
@@ -51,6 +52,10 @@ const SearchWrapper = styled.div`
     padding: 10px 20px;
     border-radius: 20px;
     border: 1px solid #707070;
+  }
+
+  @media ${({ theme }) => theme.device.tablet} {
+    display: none;
   }
 `;
 

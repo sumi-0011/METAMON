@@ -4,6 +4,8 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import Layout from '@/components/common/layout';
+import { ThemeProvider } from 'styled-components';
+import theme from '@/styles/theme';
 
 const DEFAULT_SEO = {
   title: 'Metamon',
@@ -27,12 +29,13 @@ const DEFAULT_SEO = {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
+  console.log('theme: ', theme);
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <DefaultSeo {...DEFAULT_SEO} />
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </ThemeProvider>
   );
 }
