@@ -20,7 +20,7 @@ const confirmEmail = async (email: string) => {
     const url = EMAIL_URL + '?email=' + email;
     const { data } = await requestPost(url, {});
     return data;
-  } catch (error) {
+  } catch (error: any) {
     return error.response.data;
   }
 };

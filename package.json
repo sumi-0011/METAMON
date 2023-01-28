@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "aws s3 sync .out s3://sparcs-2023-startup-hackathon-m-2 --profile=sample-deploy-s3"
   },
   "dependencies": {
     "@next/font": "13.1.2",
