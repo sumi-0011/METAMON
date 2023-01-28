@@ -11,9 +11,9 @@ function Nav({}: NavProps) {
   const router = useRouter();
   const selectedPage = router.pathname;
 
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(true);
 
-  const handleNavItemClick = (path: SelectedPageType) => {
+  const handleChangePath = (path: SelectedPageType) => {
     router.push(path);
   };
 
@@ -22,36 +22,40 @@ function Nav({}: NavProps) {
   };
 
   const handleSubNavClose = () => {
-    setIsNavOpen(false);
+    setIsNavOpen(true);
   };
 
   return (
-    <Wrapper onMouseOver={handleSubNavOpen} onMouseLeave={handleSubNavClose}>
-      <Item
-        className={selectedPage === '/intro' ? 'selected' : ''}
-        onClick={() => handleNavItemClick('/intro')}
-      >
-        METAMON 소개
-      </Item>
-      <Item
-        className={selectedPage === '/way' ? 'selected' : ''}
-        onClick={() => handleNavItemClick('/way')}
-      >
-        사용 방법
-      </Item>
-      <SignInWrapper onClick={() => handleNavItemClick('/signin')}>
+    <Wrapper>
+      <Wrapper onMouseOver={handleSubNavOpen} onMouseLeave={handleSubNavClose}>
+        <Item
+          className={selectedPage === '/intro' ? 'selected' : ''}
+          onClick={() => handleChangePath('/intro')}
+        >
+          METAMON 소개
+        </Item>
+        <Item
+          className={selectedPage === '/way' ? 'selected' : ''}
+          onClick={() => handleChangePath('/way')}
+        >
+          사용 방법
+        </Item>
+        <SubNav className={isNavOpen ? 'open' : ''}>
+          <SubNavInner>
+            <SubItemWrapper>
+              <SubItem>METAMON 소개</SubItem>
+              <SubItem>서비스 취지</SubItem>
+            </SubItemWrapper>
+            <SubItemWrapper>
+              <SubItem>사용 방법</SubItem>
+            </SubItemWrapper>
+          </SubNavInner>
+        </SubNav>
+      </Wrapper>
+
+      <SignInWrapper onClick={() => handleChangePath('/signin')}>
         Sign in
       </SignInWrapper>
-
-      <SubNav className={isNavOpen ? 'open' : ''}>
-        <SubNavInner>
-          <SubItemWrapper>
-            <div>METAMON 소개</div>
-            <div>서비스 취지</div>
-          </SubItemWrapper>
-          <SubItemWrapper>사용 방법</SubItemWrapper>
-        </SubNavInner>
-      </SubNav>
     </Wrapper>
   );
 }
@@ -78,28 +82,72 @@ const SubItemWrapper = styled.div`
   gap: 20px;
 `;
 
+const SubItem = styled.div`
+  width: fit-content;
+
+  cursor: pointer;
+  position: relative;
+  &::after {
+    transition: all 1s;
+    content: '';
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    border: 1px solid #fff;
+
+    bottom: -5px;
+    right: 0;
+    left: 0;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+      border: 1px solid var(--basic-color);
+    }
+  }
+`;
 const Item = styled.div`
   position: relative;
   min-width: 72px;
   text-align: center;
-  &.selected::before {
-    margin: auto;
-    position: absolute;
-    top: -24px;
-    left: 0;
-    right: 0;
-    content: '';
-    width: 72px;
-    height: 9px;
-    display: block;
-    background-color: var(--basic-color);
-    border-radius: 0 0 9px 9px;
+  cursor: pointer;
+
+  &.selected {
+    font-weight: bold;
+
+    &::before {
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      margin: auto;
+      position: absolute;
+      top: -24px;
+      left: 0;
+      right: 0;
+      content: '';
+      width: 72px;
+      height: 9px;
+      display: block;
+      background-color: var(--basic-color);
+      border-radius: 0 0 9px 9px;
+      animation-name: fadeIn;
+      animation-duration: 0.5s;
+    }
   }
 `;
 
 const SignInWrapper = styled(Flex)`
   color: #4d4f5c;
   padding-left: 20px;
+  cursor: pointer;
+
   &::before {
     content: '';
     height: 17px;
@@ -121,6 +169,7 @@ const SubNav = styled.div`
   left: 0;
   height: 0;
   overflow: hidden;
+
   &.open {
     height: 150px;
   }

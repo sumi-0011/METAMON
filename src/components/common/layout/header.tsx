@@ -1,14 +1,21 @@
 import { Flex } from '@/components/common/flex';
 import Nav from '@/components/common/layout/nav';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styled from 'styled-components';
 
 function Header() {
+  const router = useRouter();
+
+  const handleChangePath = (path: string) => {
+    router.push(path);
+  };
+
   return (
     <div>
       <Wrapper>
         <LeftBox>
-          <Logo>MEMAMON</Logo>
+          <Logo onClick={() => handleChangePath('/')}>MEMAMON</Logo>
           <SearchWrapper>
             <input type="text" />
           </SearchWrapper>
@@ -51,6 +58,7 @@ const Logo = styled.div`
   font-size: 1.875rem;
   font-weight: bold;
   line-height: 40px;
+  cursor: pointer;
 `;
 
 export default Header;
