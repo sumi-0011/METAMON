@@ -1,5 +1,6 @@
 import { Flex } from '@/components/common/flex';
 import Nav from '@/components/common/layout/nav';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styled from 'styled-components';
@@ -15,10 +16,14 @@ function Header() {
     <div>
       <Wrapper>
         <LeftBox>
-          <Logo onClick={() => handleChangePath('/')}>MEMAMON</Logo>
-          {/* <SearchWrapper>
-            <input type="text" />
-          </SearchWrapper> */}
+          <Logo onClick={() => handleChangePath('/')}>
+            <Image
+              src={'/static/meta-icon-text.png'}
+              width={210}
+              height={43}
+              alt={'metamon-logo'}
+            />
+          </Logo>
         </LeftBox>
         <Nav />
       </Wrapper>

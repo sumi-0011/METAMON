@@ -5,7 +5,7 @@ function JoinPage() {
   return (
     <Wrapper>
       <Title>안녕하세요.</Title>
-      <Title>METAMON에 로그인 해보세요</Title>
+      <Title>METAMON에 회원가입 해보세요</Title>
       <Join />
     </Wrapper>
   );

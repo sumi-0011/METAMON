@@ -1,3 +1,4 @@
+import Footer from '@/components/common/layout/footer';
 import Header from '@/components/common/layout/header';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
@@ -13,6 +14,7 @@ function Layout({ children }: LayoutProps) {
         <Header />
       </HeaderContainer>
       <MainContainer>{children}</MainContainer>
+      <Footer />
     </Wrapper>
   );
 }
@@ -31,7 +33,7 @@ const HeaderContainer = styled.header`
 
 const MainContainer = styled.main`
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 134px);
   display: flex;
   flex-direction: column;
 
