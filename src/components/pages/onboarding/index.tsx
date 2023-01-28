@@ -1,16 +1,7 @@
-import Slider from '@/components/pages/onboarding/slider';
-import { Example } from '@/components/pages/onboarding/sliderTest';
 import styled from 'styled-components';
 
 function Onboarding() {
-  return (
-    <Wrapper>
-      <Title>안녕하세요.</Title>
-      <Title>METAMON을 소개합니다.</Title>
-      <Slider />
-      {/* <Slider /> */}
-    </Wrapper>
-  );
+  return <Wrapper></Wrapper>;
 }
 
 const Title = styled.h1`
