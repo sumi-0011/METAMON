@@ -1,10 +1,12 @@
 import MainSection from '@/components/pages/onboarding/main-section';
+import Section1 from '@/components/pages/onboarding/section-1';
 import styled from 'styled-components';
 
 function Onboarding() {
   return (
     <Wrapper>
       <MainSection />
+      <Section1 />
     </Wrapper>
   );
 }
@@ -16,9 +18,9 @@ const Title = styled.h1`
 `;
 
 const Wrapper = styled.div`
-  /* max-width: 1000px; */
   width: 100%;
   margin: auto;
+  background-color: #fff;
 `;
 
 export default Onboarding;

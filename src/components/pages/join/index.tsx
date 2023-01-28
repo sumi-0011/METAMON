@@ -33,7 +33,7 @@ function Join() {
       console.log(name, birth, password, email);
 
       const data = await sign_up({
-        name,
+        userName: name,
         email,
         password,
         birth,

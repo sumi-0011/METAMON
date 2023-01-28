@@ -38,7 +38,7 @@ const MainContainer = styled.main`
   flex-direction: column;
 
   @media (max-width: 768px) {
-    padding: 30px 20px;
+    /* padding: 30px 20px; */
   }
 
   padding-top: 95px;
