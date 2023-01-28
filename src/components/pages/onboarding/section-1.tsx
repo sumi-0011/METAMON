@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import {
+  EmojiWrapperStyle,
+  WrapperStyle,
+} from '@/components/pages/onboarding/style';
 
 function Section1() {
   return (
@@ -19,14 +23,14 @@ function Section1() {
           <Desc>관리하세요.</Desc>
         </DescWrapper>
       </TextWrapper>
-      <EmojiWrapper>
+      <Emoji>
         <Image
           src={'/static/emoji1.png'}
           alt="emoji1"
           width={268}
           height={268}
         />
-      </EmojiWrapper>
+      </Emoji>
 
       <MockImageWrapper>
         <Image src="/static/Mockup.png" alt="mockup1" fill />
@@ -35,30 +39,22 @@ function Section1() {
   );
 }
 
-const Wrapper = styled.div`
-  --top-size: 20px;
-  background-color: #fff;
-  position: relative;
-  height: 2100px;
+const Wrapper = styled(WrapperStyle)`
+  height: 1850px;
 
   max-width: 1600px;
   margin: 0 auto;
   font-size: var(--top-size);
 
   @media ${({ theme }) => theme.device.desktop} {
-    --top-size: 18px;
-
-    height: 1950px;
+    height: 1800px;
   }
   @media ${({ theme }) => theme.device.laptop} {
-    --top-size: 13px;
-    height: 1660px;
+    height: 1560px;
   }
 
   @media ${({ theme }) => theme.device.tablet} {
-    --top-size: 8px;
-
-    height: 1050px;
+    height: 1000px;
   }
 
   @media ${({ theme }) => theme.device.mobile} {
@@ -71,20 +67,21 @@ const MockImageWrapper = styled.div`
   position: absolute;
   bottom: 0;
 
-  width: 1000px;
+  width: 900px;
   max-width: 1600px;
-  height: 1100px;
+  height: 1000px;
 
   right: 50px;
+  z-index: 0;
 
   @media ${({ theme }) => theme.device.desktop} {
-    width: 900px;
-    height: 1000px;
+    width: 800px;
+    height: 900px;
   }
 
   @media ${({ theme }) => theme.device.laptop} {
-    width: 800px;
-    height: 910px;
+    width: 700px;
+    height: 810px;
   }
 
   @media ${({ theme }) => theme.device.tablet} {
@@ -103,6 +100,7 @@ const TextWrapper = styled.div`
   position: absolute;
   top: 285px;
   left: 254px;
+  z-index: 1;
 
   @media ${({ theme }) => theme.device.desktop} {
     left: 100px;
@@ -116,8 +114,7 @@ const TextWrapper = styled.div`
   }
 `;
 
-const EmojiWrapper = styled.div`
-  position: absolute;
+const Emoji = styled(EmojiWrapperStyle)`
   top: 400px;
   left: 897px;
 
@@ -127,32 +124,23 @@ const EmojiWrapper = styled.div`
 
   @media ${({ theme }) => theme.device.laptop} {
     left: 500px;
-    img {
-      width: 180px;
-      height: 180px;
-    }
   }
 
   @media ${({ theme }) => theme.device.tablet} {
     left: 320px;
     top: 350px;
-    img {
-      width: 140px;
-      height: 140px;
-    }
   }
 
   @media ${({ theme }) => theme.device.mobile} {
     left: 230px;
     top: 350px;
-    img {
-      width: 120px;
-      height: 120px;
-    }
   }
 `;
 
-const BigTitleWrapper = styled.div``;
+const BigTitleWrapper = styled.div`
+  text-align: left;
+`;
+
 const BigTitle = styled.div`
   text-align: left;
   font-size: 6em;

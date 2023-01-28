@@ -42,6 +42,7 @@ const InnerWrapper = styled.div`
   height: 100%;
   margin: 0 auto;
 `;
+
 const LeftBox = styled.div`
   position: absolute;
   left: 180px;
@@ -56,6 +57,27 @@ const LeftBox = styled.div`
     margin-top: 48px;
     font-size: 30px;
   }
+
+  @media only screen and (max-width: 1200px) {
+    left: 125px;
+  }
+  @media ${({ theme }) => theme.device.laptop} {
+    left: 100px;
+    top: -155px;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    left: 80px;
+    img {
+      width: 370px;
+      height: 60px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    /* TODO */
+  }
 `;
 
 const RightImage = styled.div`
@@ -66,5 +88,13 @@ const RightImage = styled.div`
   top: -64px;
   bottom: 0;
   margin: auto;
+  @media ${({ theme }) => theme.device.laptop} {
+    top: 50px;
+    right: -150px;
+    img {
+      width: 600px;
+      height: 400px;
+    }
+  }
 `;
 export default MainSection;
