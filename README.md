@@ -18,18 +18,7 @@
 - framer-motion
 
 ## Dev Server 실행 방법
-
-yarn 사용시
-
-```
-$ yarn
-$ yarn dev
-```
-
-## Production 배포 방법
-
-- next.config.js 설정  
-
+1.  next.config.js 설정  
 next.config.js
 
 ```
@@ -43,8 +32,17 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
+```
+
+2. yarn 사용시
 
 ```
+$ yarn
+$ yarn dev
+```
+
+## Production 배포 방법
+
 
 - `yarn build`를 이용하여 빌드
 - 빌드 결과물을 aws s3 bucket에 upload
