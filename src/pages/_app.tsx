@@ -10,7 +10,6 @@ import theme from '@/styles/theme';
 const DEFAULT_SEO = {
   title: 'METAMON',
   description: 'metamon site',
-  canonical: 'https://www.carrotins.com',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
@@ -19,10 +18,10 @@ const DEFAULT_SEO = {
     site_name: 'METAMON',
     images: [
       {
-        url: '/static/meta-blue-box.png',
+        url: '/static/slide.png',
         width: 285,
         height: 285,
-        alt: 'meta-blue-box',
+        alt: 'metamon',
       },
     ],
   },
