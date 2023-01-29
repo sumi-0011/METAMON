@@ -1,4 +1,5 @@
-# [TEAM M] METAMON - http://metamon.hackathon.sparcs.org/
+# [TEAM M] [METAMON](http://metamon.hackathon.sparcs.org/)
+
 
 내 정체성을 지켜주는 메타버스 신분증
 
@@ -15,8 +16,6 @@
 - styled-component
 - axois
 - framer-motion
--
-- ... 프로젝트에서 사용한 기술, 오픈소스, code snippet ...
 
 ## Dev Server 실행 방법
 
