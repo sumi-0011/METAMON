@@ -1,3 +1,8 @@
+# [METAMON](https://metamon-bay.vercel.app/)
+
+
+ ![slide](https://user-images.githubusercontent.com/49177223/215313697-993d5a80-f729-460b-9d13-6b81d6693c3a.png)
+
 ## About
 
 ---
@@ -10,7 +15,6 @@
 어디에 누구와 있든 내가 나임을 알 수 있게,
 현실과 통합된 메타버스 신분증을 발급받을 수 있어요.
 
-![slide.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ca607027-b2f0-469c-a89f-1005aff40771/slide.png)
 
 ## **✨ Main Feat**
 
