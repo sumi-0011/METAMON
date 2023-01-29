@@ -34,6 +34,9 @@ const Title = styled.h1`
   color: #fff;
   line-height: 45px;
   font-size: 30px;
+  @media ${({ theme }) => theme.device.mobile} {
+    font-size: 24px;
+  }
 `;
 
 const RightImage = styled.div`

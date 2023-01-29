@@ -140,6 +140,7 @@ const Wrapper = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
     padding: 35px 36px;
+    margin-top: 30px;
   }
 `;
 

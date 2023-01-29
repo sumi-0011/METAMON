@@ -158,7 +158,7 @@ const PrevArrow = styled(Arrow)`
     left: 35px;
   }
   @media (max-width: 768px) {
-    left: 20px;
+    left: 10px;
   }
   @media ${({ theme }) => theme.device.mobile} {
     left: -20px;
@@ -171,7 +171,7 @@ const NextArrow = styled(Arrow)`
     right: 35px;
   }
   @media (max-width: 768px) {
-    right: 20px;
+    right: 10px;
   }
   @media ${({ theme }) => theme.device.mobile} {
     right: -20px;

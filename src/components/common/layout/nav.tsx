@@ -49,10 +49,11 @@ const Wrapper = styled.nav`
   font-size: 15px;
   @media ${({ theme }) => theme.device.tablet} {
     /* display: none; */
-    gap: 5px;
+    gap: 10px;
     font-size: 13px;
   }
-  @media ${({ theme }) => theme.device.mobile} {
+
+  @media only screen and (max-width: 600px) {
     font-size: 10px;
     padding: 0 10px;
   }
@@ -112,14 +113,18 @@ const Item = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
     min-width: fit-content;
     width: fit-content;
+    &.selected::before {
+      width: 60px;
+      top: -36px;
+    }
   }
-  @media ${({ theme }) => theme.device.mobile} {
+  @media only screen and (max-width: 600px) {
+    /* @media ${({ theme }) => theme.device.mobile} { */
     width: fit-content;
     min-width: fit-content;
 
     &.selected::before {
       width: 50px;
-      top: -36px;
     }
   }
 `;
@@ -137,13 +142,21 @@ const SignInWrapper = styled.button`
 
   background-color: var(--basic-color);
   border: 1px solid var(--basic-color);
+
+  @media only screen and (max-width: 800px) {
+    width: 160px;
+  }
   @media ${({ theme }) => theme.device.tablet} {
     width: 120px;
+    padding: 5px 10px;
+    height: 34px;
   }
-  @media ${({ theme }) => theme.device.mobile} {
+
+  @media only screen and (max-width: 600px) {
     font-size: 10px;
     width: 108px;
   }
+
   @media (max-width: 375px) {
     display: none;
   }

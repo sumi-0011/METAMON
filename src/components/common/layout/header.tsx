@@ -62,14 +62,14 @@ const Logo = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
     img {
       width: 150px;
-      height: 38px;
+      height: 34px;
     }
   }
 
   @media ${({ theme }) => theme.device.mobile} {
     img {
       width: 108px;
-      height: 26px;
+      height: 24px;
     }
   }
 `;

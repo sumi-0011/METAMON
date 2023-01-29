@@ -10,6 +10,7 @@ import useScrollFadeIn from '@/hooks/useScrollFadeIn';
 function Section1() {
   const left1 = useScrollFadeIn('left', 1, 0);
   const left2 = useScrollFadeIn('left', 1, 0);
+  const left3 = useScrollFadeIn('left', 1, 0);
   const right1 = useScrollFadeIn('right', 1, 0);
 
   return (
@@ -30,7 +31,7 @@ function Section1() {
             <Desc>관리하세요.</Desc>
           </DescWrapper>
         </TextWrapper>
-        <Emoji>
+        <Emoji {...left3}>
           <Image
             src={'/static/emoji1.png'}
             alt="emoji1"
