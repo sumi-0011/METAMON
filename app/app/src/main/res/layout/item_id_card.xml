@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userInfo"
+            type="com.andes.metamon.main.home.domain.model.response.UserCardInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_platform"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@id/cv_image"
+            app:layout_constraintDimensionRatio="5:1"
+            app:layout_constraintEnd_toEndOf="@id/cv_image"
+            app:layout_constraintStart_toStartOf="@id/cv_image"
+            tools:src="@drawable/img_zepeto" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_image"
+            android:layout_width="250dp"
+            android:layout_height="400dp"
+            android:layout_marginBottom="100dp"
+            android:translationZ="3dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:translationZ="50dp"
+                tools:src="@color/blue" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_metamon_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:translationZ="50dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_logo_detail"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/img_card_metamon_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_logo_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="METAMON ID"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/iv_logo_detail"
+                    app:layout_constraintStart_toStartOf="@id/iv_logo_detail"
+                    app:layout_constraintTop_toBottomOf="@id/iv_logo_detail" />
+
+                <View
+                    android:id="@+id/view_divider_first_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/tv_logo_detail"
+                    app:layout_constraintStart_toStartOf="@id/tv_logo_detail"
+                    app:layout_constraintTop_toBottomOf="@id/tv_logo_detail" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_qr_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_qr_image_metamon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tv_date_metamon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/cv_qr_image"
+                    app:layout_constraintStart_toStartOf="@id/cv_qr_image"
+                    app:layout_constraintTop_toBottomOf="@id/cv_qr_image"
+                    tools:text="2023.01.29" />
+
+                <TextView
+                    android:id="@+id/tv_email_metamon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/cv_qr_image"
+                    app:layout_constraintStart_toStartOf="@id/cv_qr_image"
+                    app:layout_constraintTop_toBottomOf="@id/tv_date_metamon"
+                    tools:text="dnjstjr245@gmail.com" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_metamon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:translationZ="50dp"
+                tools:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/tv_metamon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:text="METAMON\n신분증"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.6dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/tv_metamon"
+                    app:layout_constraintStart_toStartOf="@id/tv_metamon"
+                    app:layout_constraintTop_toBottomOf="@id/tv_metamon" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/img_metamon_id_card_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_more"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:translationZ="50dp">
+
+                <TextView
+                    android:id="@+id/tv_enroll_new_id_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:text="새로운 신분증을\n등록하세요."
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="invisible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_enroll"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="invisible" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:translationZ="100dp"
+                tools:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="METAMON님의" />
+
+                <TextView
+                    android:id="@+id/tv_id_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_nickname"
+                    tools:text="ZEPETO 신분증" />
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tv_tag_username"
+                    app:layout_constraintStart_toStartOf="@id/tv_tag_username"
+                    tools:text="윤쏘" />
+
+                <TextView
+                    android:id="@+id/tv_tag_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/iv_qr_image"
+                    app:layout_constraintStart_toStartOf="@id/iv_qr_image"
+                    tools:text="@METAMON" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_qr_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_second"
+            android:layout_width="250dp"
+            android:layout_height="400dp"
+            android:layout_marginBottom="100dp"
+            android:translationX="5dp"
+            android:translationY="5dp"
+            android:translationZ="2dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@color/white" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_third"
+            android:layout_width="250dp"
+            android:layout_height="400dp"
+            android:layout_marginBottom="100dp"
+            android:translationX="10dp"
+            android:translationY="10dp"
+            android:translationZ="1dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@color/white" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

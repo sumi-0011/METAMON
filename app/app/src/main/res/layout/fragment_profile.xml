@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.andes.metamon.main.home.presentation.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/img_logo"
+            android:translationZ="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/transparent"
+            android:src="@mipmap/ic_setting"
+            android:tint="@color/blue"
+            android:translationZ="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_my_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="마이페이지"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:translationZ="1dp"
+            app:layout_constraintStart_toStartOf="@id/iv_logo"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/bg_rectangle_blue_round_20_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_my_page">
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="METAMON" />
+
+            <TextView
+                android:id="@+id/tv_sir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/sir"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_nickname"
+                app:layout_constraintStart_toEndOf="@id/tv_nickname" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginBottom="1dp"
+                android:src="@drawable/ic_edit"
+                android:tint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/tv_sir"
+                app:layout_constraintStart_toEndOf="@id/tv_sir" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_logo_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="25dp"
+                android:src="@drawable/menu_logo"
+                app:layout_constraintBottom_toBottomOf="@id/tv_nickname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_nickname" />
+
+            <View
+                android:id="@+id/view_divider_profile"
+                android:layout_width="0dp"
+                android:layout_height="0.6dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_1"
+                app:layout_constraintEnd_toEndOf="@id/iv_logo_profile"
+                app:layout_constraintStart_toStartOf="@id/tv_nickname"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo_profile" />
+
+            <TextView
+                android:id="@+id/tv_token"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/view_divider_profile"
+                app:layout_constraintTop_toBottomOf="@id/view_divider_profile" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_divider_first"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/gray_2"
+            app:layout_constraintEnd_toEndOf="@id/cl_profile"
+            app:layout_constraintStart_toStartOf="@id/cl_profile"
+            app:layout_constraintTop_toBottomOf="@id/cl_profile" />
+
+        <TextView
+            android:id="@+id/tv_my_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="내 정보"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/view_divider_first"
+            app:layout_constraintTop_toBottomOf="@id/view_divider_first" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_see_all"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_rectangle_gray_round_20_dp"
+            app:layout_constraintEnd_toEndOf="@id/view_divider_first"
+            app:layout_constraintStart_toStartOf="@id/view_divider_first"
+            app:layout_constraintTop_toBottomOf="@id/tv_my_info">
+
+            <TextView
+                android:id="@+id/tv_see_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="신분증 한 눈에 보기"
+                android:textColor="@color/blue"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_divider_second"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/gray_2"
+            app:layout_constraintEnd_toEndOf="@id/cl_see_all"
+            app:layout_constraintStart_toStartOf="@id/cl_see_all"
+            app:layout_constraintTop_toBottomOf="@id/cl_see_all" />
+
+        <TextView
+            android:id="@+id/tv_app_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="앱 정보"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/view_divider_second"
+            app:layout_constraintTop_toBottomOf="@id/view_divider_second" />
+
+        <TextView
+            android:id="@+id/tv_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="앱 버전"
+            android:textColor="@color/gray_3"
+            app:layout_constraintStart_toStartOf="@id/tv_app_info"
+            app:layout_constraintTop_toBottomOf="@id/tv_app_info" />
+
+        <TextView
+            android:id="@+id/tv_version_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="1.0.0"
+            android:textColor="@color/gray_3"
+            app:layout_constraintEnd_toEndOf="@id/view_divider_second"
+            app:layout_constraintTop_toBottomOf="@id/tv_app_info" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

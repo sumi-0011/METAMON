@@ -1,0 +1,4 @@
+rootProject.name = "Metamon"
+include ':app'
+include ':logging'
+include ':navigator'
