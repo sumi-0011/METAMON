@@ -8,7 +8,6 @@ const EMAIL_URL = BASE + '/v1/email/confirm';
 const sign_up = async (body: any) => {
   try {
     const { data } = await requestPost(SIGN_UP_URL, body);
-    console.log('data: ', data);
     return data;
   } catch (error) {
     console.log('error: ', error);

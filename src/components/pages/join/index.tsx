@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-// const VALID_PASSWORD_MESSAGE = '비밀번호 규칙 위반!! ';
 const PASSWORD_MESSAGE = '특수문자/문자/숫자 형태의 8~15자리 이내';
 
 function Join() {
@@ -30,8 +29,6 @@ function Join() {
 
   const handleSignIn = async () => {
     if (isValidAuth) {
-      console.log(name, birth, password, email);
-
       const data = await sign_up({
         userName: name,
         email,
@@ -40,7 +37,6 @@ function Join() {
       });
 
       if (data?.status === 200) {
-        // TODO : 회원가입 완료, 페이지ㅣ 이동
         router.push('/signin/complete');
       }
     }

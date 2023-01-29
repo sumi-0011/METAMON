@@ -68,5 +68,5 @@ NEXT_PUBLIC_REGION, // aws s3 s region
 
 ## 기타
 
-- 디자인 파일은 `public/static` 경로에 존재합니다.
+- 디자인 파일 : `public/static` 경로에 존재
 - 기획/와이어 프레임 : https://www.figma.com/file/qsVapr2EEYQYCo9wyHFT55/METAMON?node-id=0%3A1&t=FxrtNIy4eQJcMCDh-0
