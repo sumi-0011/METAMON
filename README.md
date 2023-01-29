@@ -30,6 +30,9 @@
 | Design | Adobe XD, Figma |                 |
 
 ## WEB PREVIEW
+![onboarding](https://user-images.githubusercontent.com/49177223/215313591-685ed784-02ae-4e7c-949b-9ec43501dd9c.gif)
+![intro-1](https://user-images.githubusercontent.com/49177223/215313584-971e3970-e96a-4969-b64b-cf289003d716.gif)
+![onboarding-m](https://user-images.githubusercontent.com/49177223/215313595-c60239c6-97ae-4f0e-8a81-c96fd3205f5b.gif)
 
 ---
 
@@ -37,9 +40,8 @@
 
 ---
 
-> ## WEB 사용 방법
->
-> ---
+
+## WEB 사용 방법
 >
 > ```
 > $ yarn
@@ -54,7 +56,6 @@
 
 
 내 정체성을 지켜주는 메타버스 신분증
-s
 
 - METAMON 회원가입 기능
 - METAMON onboarding
