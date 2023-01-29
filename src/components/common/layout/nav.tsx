@@ -102,12 +102,15 @@ const Item = styled.div`
       right: 0;
       content: '';
       width: 72px;
-      height: 12px;
+      height: 9px;
       display: block;
       background-color: var(--basic-color);
       border-radius: 0 0 9px 9px;
       animation-name: fadeIn;
       animation-duration: 0.5s;
+      @media ${({ theme }) => theme.device.tablet} {
+        height: 12px;
+      }
     }
   }
   @media ${({ theme }) => theme.device.tablet} {

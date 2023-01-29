@@ -8,21 +8,21 @@ import { ThemeProvider } from 'styled-components';
 import theme from '@/styles/theme';
 
 const DEFAULT_SEO = {
-  title: 'Metamon',
+  title: 'METAMON',
   description: 'metamon site',
   canonical: 'https://www.carrotins.com',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: '카카오톡, 페이스북에 링크 넣으면 연결되는 url',
-    title: '카카오톡, 페이스북에 링크 넣으면 올라올 타이틀',
-    site_name: '사이트이름',
+    url: 'http://metamon.hackathon.sparcs.org/',
+    title: '내 정체성을 지켜주는 메타버스 신분증',
+    site_name: 'METAMON',
     images: [
       {
-        url: '카카오톡, 페이스북에에 링크 넣으면 올라올 이미지',
+        url: '/static/meta-blue-box.png',
         width: 285,
-        height: 167,
-        alt: '이미지',
+        height: 285,
+        alt: 'meta-blue-box',
       },
     ],
   },
