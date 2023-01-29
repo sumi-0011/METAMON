@@ -28,7 +28,7 @@ $ yarn dev
 
 ## Production 배포 방법
 
-- next.config.js 설정 (env 설정)
+- next.config.js 설정  
 
 next.config.js
 
@@ -38,12 +38,6 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-  },
-  env: {  // 입력 필요
-    NEXT_PUBLIC_BUCKET_NAME,
-    NEXT_PUBLIC_ACCESS,
-    NEXT_PUBLIC_SECRET,
-    NEXT_PUBLIC_REGION,
   },
 };
 
@@ -57,13 +51,7 @@ module.exports = nextConfig;
 - 정적 페이지 호스팅을 이용해 배포
 
 ## 환경 변수 및 시크릿
-
-```
-NEXT_PUBLIC_BUCKET_NAME, // aws s3 버킷 이름
-NEXT_PUBLIC_ACCESS, // aws s3 access key
-NEXT_PUBLIC_SECRET, // aws s3 secret key
-NEXT_PUBLIC_REGION, // aws s3 s region
-```
+`next.config.js`
 
 ## 기타
 
