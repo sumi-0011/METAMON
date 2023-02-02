@@ -1,9 +1,8 @@
 # [METAMON](https://metamon-bay.vercel.app/)
 
+<img src="https://user-images.githubusercontent.com/49177223/216245538-163196e7-8d32-4865-a5bb-b1acf223190d.png" width="300" height="300">
 
- ![slide](https://user-images.githubusercontent.com/49177223/215313697-993d5a80-f729-460b-9d13-6b81d6693c3a.png)
-
-## About
+## Intro
 
 ---
 
@@ -15,6 +14,24 @@
 어디에 누구와 있든 내가 나임을 알 수 있게,
 현실과 통합된 메타버스 신분증을 발급받을 수 있어요.
 
+## About - v1.0
+
+### 개발 기간
+
+2022.04 ~ 2022.06 (6주)
+
+### 배포 주소
+
+- [WEB](https://metamon-bay.vercel.app/)
+- ANDROID
+- BACK-END
+
+### 팀원 소개
+
+| PM                                                                                        | Web FE                                                                                    | Android                                                                                   | BE                                                                                         | Design                                                                                     |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| <img src="https://avatars.githubusercontent.com/u/72741178?v=4" width="200" height="200"> | <img src="https://avatars.githubusercontent.com/u/49177223?v=4" width="200" height="200"> | <img src="https://avatars.githubusercontent.com/u/76798309?v=4" width="200" height="200"> | <img src="https://avatars.githubusercontent.com/u/105899098?v=4" width="200" height="200"> | <img src="https://avatars.githubusercontent.com/u/123734760?v=4" width="200" height="200"> |
+| [rkdauddh](https://github.com/rkdauddh)                                                   | [sumi-0011](https://github.com/sumi-0011)                                                 | [onseok](https://github.com/onseok)                                                       | (https://github.com/Halfmbbn)                                                              | [haerimme1](https://github.com/haerimme1)                                                  |
 
 ##  Main Feat
 
@@ -24,18 +41,84 @@
 - **MetaMon** 서비스 회원가입 / 로그인
 - **MetaMon** 서비스 신분증 발급 / 조회
 
-## 프로젝트 사용 기술
+## 시작 가이드
 
-|        | stack           | deploy          |
-| ------ | --------------- | --------------- |
-| WEB    | Next.js         | aws S3 , vercel |
-| APP    | Kotlin          | Firebase        |
-| Server | Spring MySQL    | aws RDS, E2C    |
-| Design | Adobe XD, Figma |                 |
+---
+
+<!-- 누군가가 이 프로젝트를 clone해서 실행하려고 할 때 필요한 요구사항들과 버전들을 적어준다. -->
+
+### Requirements
+
+- Node.js 16.17.0
+- npm
+- java
+- ...
+
+### Installation
+
+<!-- Repository를 clone하고, 패키지 설치, 환경변수 설정, 실행하는 과정에 대한 내용들을 코드로 적어준다. -->
+
+```
+$ git clone https://github.com/sumi-0011/METAMON.git
+$ cd METAMON
+```
+
+#### Back-end
+
+```
+
+```
+
+#### Front-end
+
+```
+$ cd web
+$ yarn  // package install
+$ yarn dev  // start
+```
+
+#### Android
+
+```
+
+```
+
+## Stacks
+
+---
+
+### Common
+
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/Notion-fff?style=for-the-badge&logo=Notion&logoColor=000">
+
+### Web
+
+<img src="https://img.shields.io/badge/Next.js-181717?style=for-the-badge&logo=Next.js&logoColor=white">
+<img src="https://img.shields.io/badge/Vercel-000?style=for-the-badge&logo=Vercel&logoColor=white">
+
+### Android
+
+<img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=Kotlin&logoColor=fff">
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white">
+
+### Back-end
+
+<img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
+<img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=for-the-badge&logo=Amazon AWS&logoColor=white">
+
+### Design, Product
+
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">
+<img src="https://img.shields.io/badge/Adobe XD
+-FF61F6?style=for-the-badge&logo=Adobe XD&logoColor=white">
 
 ## WEB PREVIEW
-![onboarding](https://user-images.githubusercontent.com/49177223/215313591-685ed784-02ae-4e7c-949b-9ec43501dd9c.gif)
-![intro-1](https://user-images.githubusercontent.com/49177223/215313584-971e3970-e96a-4969-b64b-cf289003d716.gif)
+
+| onboarding                                                                                                           | how to use                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| ![onboarding](https://user-images.githubusercontent.com/49177223/215313591-685ed784-02ae-4e7c-949b-9ec43501dd9c.gif) | ![intro-1](https://user-images.githubusercontent.com/49177223/215313584-971e3970-e96a-4969-b64b-cf289003d716.gif) |
 
 ---
 
@@ -43,16 +126,6 @@
 
 ---
 
+## 아키텍쳐
 
-## WEB 사용 방법
->
-> ```
-> $ yarn
-> $ yarn dev
-> ```
->
-> 디자인 파일 : `public/static` 경로에 존재
->
-> 기획/와이어 프레임 : https://www.figma.com/file/qsVapr2EEYQYCo9wyHFT55/METAMON?node-id=0%3A1&t=FxrtNIy4eQJcMCDh-0
-
-
+<!-- TODO : 아키텍쳐 그리고 넣으면 좋을 것 같습니다.  -->
