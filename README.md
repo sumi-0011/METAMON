@@ -16,7 +16,7 @@
 현실과 통합된 메타버스 신분증을 발급받을 수 있어요.
 
 
-## ** Main Feat**
+##  Main Feat
 
 ---
 
@@ -36,7 +36,6 @@
 ## WEB PREVIEW
 ![onboarding](https://user-images.githubusercontent.com/49177223/215313591-685ed784-02ae-4e7c-949b-9ec43501dd9c.gif)
 ![intro-1](https://user-images.githubusercontent.com/49177223/215313584-971e3970-e96a-4969-b64b-cf289003d716.gif)
-![onboarding-m](https://user-images.githubusercontent.com/49177223/215313595-c60239c6-97ae-4f0e-8a81-c96fd3205f5b.gif)
 
 ---
 
