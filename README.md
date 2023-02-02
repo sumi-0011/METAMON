@@ -18,7 +18,7 @@
 
 ### 개발 기간
 
-2022.04 ~ 2022.06 (6주)
+2023.01.27 ~ 2023.01.29 (3일)
 
 ### 배포 주소
 
@@ -89,30 +89,23 @@ $ yarn dev  // start
 
 ### Common
 
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-<img src="https://img.shields.io/badge/Notion-fff?style=for-the-badge&logo=Notion&logoColor=000">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/Notion-fff?style=for-the-badge&logo=Notion&logoColor=000">
 
 ### Web
 
-<img src="https://img.shields.io/badge/Next.js-181717?style=for-the-badge&logo=Next.js&logoColor=white">
-<img src="https://img.shields.io/badge/Vercel-000?style=for-the-badge&logo=Vercel&logoColor=white">
+<img src="https://img.shields.io/badge/Next.js-181717?style=for-the-badge&logo=Next.js&logoColor=white"/> <img src="https://img.shields.io/badge/Vercel-000?style=for-the-badge&logo=Vercel&logoColor=white">
 
 ### Android
 
-<img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=Kotlin&logoColor=fff">
-<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white">
+<img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=Kotlin&logoColor=fff"> <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white">
 
 ### Back-end
 
-<img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
-<img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=for-the-badge&logo=Amazon AWS&logoColor=white">
+<img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=for-the-badge&logo=Amazon AWS&logoColor=white">
 
 ### Design, Product
 
-<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">
-<img src="https://img.shields.io/badge/Adobe XD
--FF61F6?style=for-the-badge&logo=Adobe XD&logoColor=white">
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">  <img src="https://img.shields.io/badge/Adobe XD-FF61F6?style=for-the-badge&logo=Adobe XD&logoColor=white"> 
 
 ## WEB PREVIEW
 
